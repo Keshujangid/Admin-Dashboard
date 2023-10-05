@@ -1,0 +1,436 @@
+:root {
+    --svgColor: #0b5163;
+    --svgColor2: #606a6dbe;
+
+}
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+    background-color: rgb(8 14 28);
+    color: #f8fafc;
+    padding: 20px;
+    font-family:'Roboto', sans-serif;;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+
+
+/* My code start From here */
+
+
+
+.container {
+    display: grid;
+    grid-template-columns: 0.75fr 3fr;
+    grid-template-rows: 1fr auto;
+    gap: 20px;
+}
+
+.header {
+    display: grid;
+    grid-template-columns: 2.5fr 1fr;
+    grid-template-rows: 1fr 2fr;
+    grid-column: 2/-1;
+    border-radius: 10px;
+}
+
+.search {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.search>img {
+    width: clamp(2rem, 3vw, 4rem);
+}
+
+.search>input {
+    width: 50%;
+}
+
+.account {
+    gap: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.account>svg {
+    width: clamp(2rem, 3vw, 4rem);
+}
+.account > h1{
+    margin: 10px 0px;
+    font-size: 2rem;
+}
+
+.account + div > p{
+    font-size: clamp(1rem, 1.5vw, 2rem);
+}
+
+.account + div > h1{
+    font-size: clamp(1rem, 3vw, 6rem);
+}
+
+div.btn{
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    justify-content: center;
+}
+
+#Profile {
+    width: 5vw;
+    padding: 5px;
+    border: 2px solid;
+    border-radius: 50%;
+}
+
+.side-bar {
+    border-radius: 10px;
+    grid-column: 1/2;
+    grid-row: 1/-1;
+}
+
+.side-bar>h1 {
+    font-size: clamp(1rem, 2vw, 4rem);
+    font-weight: bold;
+    margin-bottom: 3rem;
+}
+
+ul {
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+    margin-bottom: 6rem;
+}
+
+li {
+    display: flex;
+    align-items: center;
+    font-size: clamp(1rem, 1.5vw, 2rem);
+    column-gap: 0.8rem;
+    border-radius: 6px;
+    padding: 10px;
+}
+
+li:hover {
+    text-decoration: underline;
+    cursor: pointer;
+    -webkit-transform: scale(1.07);
+    background-color: #3498db;
+    color: #fff;
+}
+
+li>svg , .account > svg {
+    width: clamp(2rem, 2vw, 5rem);
+}
+
+.body {
+    border-radius: 10px;
+    display: grid;
+    overflow: auto;
+    grid-template-columns: 3fr 1fr;
+}
+
+.header,
+.body,
+.side-bar {
+    background-color: rgb(30 41 59/.4);
+    border: 1px solid silver;
+    gap: 15px;
+    padding: 20px;
+}
+
+.card-container + div{
+    box-shadow: -5px 0 10px rgba(0, 0, 0, 0.8);
+    height: max-content;
+    padding: 8px;
+
+}
+
+
+.card {
+    width: 300px;
+    height: max-content;
+    /* Set the width of the card */
+    background: #333;
+    color: #fff;
+    border-radius: 10px;
+    margin: 20px;
+    padding: 20px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease-in-out;
+}
+
+/* Card Image */
+.card img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto 10px;
+    border-radius: 8px;
+}
+
+/* Card Title */
+.card h2 {
+    font-size: 1.5rem;
+    margin: 0;
+    padding-bottom: 10px;
+}
+
+/* Card Content */
+.card p {
+    font-size: 1rem;
+    color: #777;
+}
+
+/* Hover Effect */
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.card-container {
+
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+    grid-template-rows: repeat(auto-fill, minmax(380px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.git-link{
+    margin-top: 20px;
+    display: flex;
+    justify-content: end;
+    gap: 20px;
+}
+
+.git-link > svg{
+    width: clamp(2rem, 2vw, 5rem);
+}
+
+.git-link > svg:hover{
+    -webkit-transform: scale(1.07);
+    --svgColor2: silver;
+}
+
+.announcement,
+.Tranding {
+    overflow: hidden;
+}
+
+.announcement>h1,
+.Tranding>h1 {
+
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: clamp(1rem, 2vw, 3rem);
+    font-weight: bold;
+    color: aqua;
+}
+
+.Tranding div,
+.announcement div {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* Tranding Image */
+.Tranding img,
+.announcement img {
+    max-width: 50px;
+    height: auto;
+    margin-right: 10px;
+}
+
+/* Tranding Text */
+.Tranding span,
+.announcement span {
+    font-size: 1rem;
+    color: #fff;
+}
+
+
+.announcement div:hover,
+.Tranding div:hover {
+    background-color: #3498db;
+    transform: scale(1.05);
+}
+
+/* Text Color on Hover */
+.announcement div:hover span,
+.Tranding div:hover span {
+    color: #fff;
+}
+
+/* Style for the search input */
+input[type="search"] {
+    width: clamp(300px , 70% , 500px);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    font-size: 1rem;
+}
+
+/* Style for the search button (optional) */
+input[type="search"]::search-cancel-button {
+    display: none;
+}
+
+
+/* Style for the placeholder text (optional) */
+input[type="search"]::placeholder {
+    color: #999;
+}
+
+/* Style for the search input on focus (optional) */
+input[type="search"]:focus {
+    border-color: #3498db;
+}
+
+.my-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* Hover effect */
+.my-button:hover {
+    background-color: #2980b9;
+}
